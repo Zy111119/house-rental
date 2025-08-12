@@ -35,7 +35,7 @@
     </select>
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.kmbeast.pojo.entity.Area">
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.Area">
         <id column="id" property="id"/>
         <result column="parent_id" property="parentId"/>
         <result column="name" property="name"/>

@@ -126,7 +126,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <!--主类所在-->
-                    <mainClass>com.kmbeast.HouseRentalApplication</mainClass>
+                    <mainClass>com.example.HouseRentalApplication</mainClass>
                     <skip>false</skip>
                 </configuration>
                 <executions>
