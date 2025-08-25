@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 项目启动类
  */
-@MapperScan("com.kmbeast.mapper")
+@MapperScan("com.example.mapper")
 @SpringBootApplication
 public class HouseRentalApplication {
     public static void main(String[] args) {

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kmbeast.mapper.AreaMapper">
-
+<mapper namespace="com.example.mapper.UserAreaMapper">
 
 
 
     <select id="list" resultMap="BaseResultMap">
-        SELECT a.* FROM area a
+        SELECT ua.* FROM user_area ua
         <where>
-            <if test="parentId != null">
-                AND a.parent_id = #{parentId}
+            <if test="userId != null">
+                AND ua.userId = #{userId}
             </if>
-            <if test="name != null and name != ''">
-                AND u.name LIKE concat('%',#{name},'%')
+            <if test="areaId != null ">
+                And ua.areaId = #{areaId}
+            </if>
         </where>
         <if test="current != null and size != null">
             LIMIT #{current},#{size}//分页
@@ -23,23 +23,23 @@
     <select id="listCount" resultType="integer">
 
         SELECT COUNT(*)
-        FROM area a
+        FROM user_area ua
         <where>
             <if test="parentId != null">
                 AND a.parent_id = #{parentId}
             </if>
             <if test="name != null and name != ''">
             AND u.name LIKE concat('%',#{name},'%')
+            </if>
         </where>
 
     </select>
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.example.pojo.entity.Area">
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.UserArea">
         <id column="id" property="id"/>
-        <result column="parent_id" property="parentId"/>
-        <result column="name" property="name"/>
+        <result column="user_id" property="userId"/>
+        <result column="area_id" property="areaId"/>
     </resultMap>
-
 
 </mapper>
